@@ -1,25 +1,45 @@
-# Talent Sourcing and Ranking System
+# Candidate Ranking and Sourcing Pipeline
 
 ## Overview
-This project aims to automate and optimize the process of talent sourcing and ranking for technology companies. By leveraging natural language processing (NLP) techniques and machine learning models, the system assists in identifying and prioritizing candidates based on their fit for specific roles.
 
-## Features
-- **Automated Data Cleaning**: The system automatically cleans the dataset by removing unnecessary words, replacing abbreviations, and standardizing job titles.
-- **Semantic Similarity Calculation**: Utilizing BERT embeddings, the system calculates the semantic similarity between candidate job titles and predefined queries.
-- **Candidate Ranking**: Candidates are ranked based on their semantic similarity scores, allowing for efficient candidate selection.
-- **Manual Intervention**: Users can manually star or favorite candidates, influencing their ranking in the selection process.
-- **Re-ranking**: Upon starring candidates, the system re-ranks the candidates to reflect the manual intervention.
+This project automates the process of ranking and sourcing candidates using advanced NLP techniques. It leverages embeddings from BERT and Doc2Vec models to evaluate and rank candidates based on job titles, enhancing the efficiency and accuracy of candidate selection.
 
-## Setup
-1. **Dependencies**: Ensure that all required libraries and dependencies are installed. This includes pandas, numpy, spacy, nltk, transformers, and TensorFlow.
-   
-2. **Data Loading**: The system loads the candidate data from a Google Sheets link specified in the code. Ensure that the link is accessible and contains the necessary data in CSV format.
-   
-3. **Execution**: Run the main script to execute the talent sourcing and ranking system. Follow the prompts to star candidates and observe the re-ranking process.
+## Technologies Used
 
-## Usage
-1. **Data Preparation**: Ensure that the candidate dataset is structured correctly with relevant columns such as job title and ID.
-   
-2. **Keyword Specification**: Define the keywords or queries relevant to the roles you are sourcing for. These queries will be used to search for matching candidates.
-   
-3. **Execution**: Run the script and input the IDs of candidates you want to star when prompted. Observe the ranked list of candidates based on their fit for the specified roles.
+- **Python**: Core programming language for development.
+- **Pandas**: Data manipulation and analysis.
+- **NumPy**: Numerical computing and operations.
+- **SpaCy**: NLP preprocessing and lemmatization.
+- **NLTK**: Text processing, including stemming.
+- **TensorFlow**: Deep learning framework for BERT models.
+- **Transformers**: Hugging Face's library for BERT tokenization and embeddings.
+- **Gensim**: Library for training Doc2Vec models.
+- **Scikit-learn**: For calculating cosine similarity between embeddings.
+
+## Key Components
+
+### Data Preprocessing
+
+1. **Loading Data**: Read and inspect the dataset to identify missing values and duplicates.
+2. **Cleaning Data**: Remove unnecessary characters, replace abbreviations, and apply stemming and lemmatization.
+
+### Embeddings Generation
+
+1. **BERT Embeddings**: Generate contextual embeddings for job titles using the BERT model.
+2. **Doc2Vec Embeddings**: Create document vectors for job titles using the Doc2Vec model.
+
+### Similarity Computation
+
+1. **Cosine Similarity**: Compute similarities between query and candidate job titles using both BERT and Doc2Vec embeddings.
+2. **Ranking**: Rank candidates based on similarity scores from both models and calculate mean scores.
+
+### Re-Ranking
+
+1. **Starred Candidates**: Allow users to mark candidates as starred and re-rank based on starred candidates' similarity.
+2. **Final Ranking**: Generate final rankings considering both original and starred candidate scores.
+
+## Future Improvements
+
+- **Performance Optimization**: Enhance the efficiency of the pipeline.
+- **Extended Features**: Integrate additional NLP models or custom scoring algorithms.
+- **User Interface**: Develop a web-based interface for easier interaction.
