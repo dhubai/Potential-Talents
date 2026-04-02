@@ -1,0 +1,25 @@
+# Cached embeddings, feedback, and model downloads
+.cache/
+
+# Python build artifacts
+*.egg-info/
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Executed notebook copy
+PotentialTalents.executed.ipynb
+
+# IDE / editor
+.vscode/
+.cursor/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Virtual environments
+.venv/
+venv/

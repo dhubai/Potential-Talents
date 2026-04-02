@@ -1,0 +1,14 @@
+pandas>=2.2
+numpy>=2.0
+scikit-learn>=1.5
+openpyxl>=3.1.5
+
+# NLP + embeddings
+spacy>=3.7
+nltk>=3.9
+transformers>=4.45
+torch>=2.4
+sentence-transformers>=3.0
+
+# Doc2Vec baseline
+gensim>=4.3
